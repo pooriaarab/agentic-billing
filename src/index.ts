@@ -1,0 +1,127 @@
+export { VERSION } from "./version.js";
+export {
+  defineBrand,
+  createLogger,
+  GuardError,
+  VendorError,
+  createGuards,
+  LocalRouterAdapter,
+  HttpRouterAdapter,
+  recordCost,
+  getCostReport,
+  resetCosts,
+  createDryRunResult,
+  dispatchText,
+  summarizeText,
+} from "./core.js";
+export type {
+  BrandConfig,
+  LogLevel,
+  Logger,
+  LoggerOptions,
+  CapsConfig,
+  QuietHoursConfig,
+  GuardsConfig,
+  Guards,
+  DispatchReceipt,
+  RouterAdapter,
+  HttpRouterOptions,
+  CostEntry,
+  CostReport,
+  DispatchOptions,
+  DispatchResult,
+  TopWord,
+  TextSummary,
+  SummarizeOptions,
+} from "./core.js";
+export {
+  BillingError,
+  modeForKey,
+  catalogEnvName,
+  resolvePriceId,
+  assertEmail,
+  checkAccess,
+  planWebhookEvent,
+  parseWebhookEnvelope,
+  dryId,
+  HANDLED_WEBHOOK_EVENTS,
+} from "./billing.js";
+export type {
+  BillingMode,
+  AccessDecision,
+  AccessCheck,
+  AccessOptions,
+  WebhookObject,
+  WebhookEnvelope,
+  LedgerOp,
+  LedgerOpRecordEvent,
+  LedgerOpUpsertSubscription,
+  WebhookPlan,
+  WebhookPlanHandled,
+  WebhookPlanIgnored,
+  WebhookPlanInput,
+} from "./billing.js";
+export {
+  StripeBillingAdapter,
+  DryRunBillingAdapter,
+  assertValidWebhookSignature,
+  verifyWebhookEnvelope,
+  createBillingAdapter,
+  billingAdapterForEnv,
+  reportPackUsage,
+} from "./vendors.js";
+export type {
+  CheckoutInput,
+  CheckoutResult,
+  SubscribeInput,
+  SubscriptionResult,
+  StatusResult,
+  CancelInput,
+  CancelResult,
+  InvoiceInput,
+  InvoiceResult,
+  UsageInput,
+  UsageResult,
+  PortalInput,
+  PortalResult,
+  BillingAdapter,
+  WebhookVerifyOptions,
+  CreateBillingAdapterOptions,
+  PackUsageInput,
+  PackUsageResult,
+} from "./vendors.js";
+export {
+  LEDGER_SCHEMA_SQL,
+  defaultLedgerPath,
+  MemoryLedger,
+  loadFileLedger,
+  D1Ledger,
+  ledgerForEnv,
+} from "./ledger.js";
+export type {
+  LedgerSubscription,
+  LedgerEvent,
+  LedgerUsage,
+  Ledger,
+  D1LedgerOptions,
+} from "./ledger.js";
+
+import { defineBrand, type BrandConfig } from "./core.js";
+import { VERSION } from "./version.js";
+
+export const DEFAULT_BRAND: BrandConfig = defineBrand({
+  name: "Agentic billing",
+  command: "agentic-billing",
+  description: "Bill subscriptions, invoices, and metered units over Stripe.",
+  keywords: [
+    "stripe",
+    "subscriptions",
+    "invoicing",
+    "agentic-suite",
+    "claude-code",
+    "codex",
+    "cli",
+    "mcp",
+  ],
+  version: VERSION,
+});

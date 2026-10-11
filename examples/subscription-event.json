@@ -1,0 +1,12 @@
+{
+  "id": "evt_example_subscription_updated",
+  "type": "customer.subscription.updated",
+  "livemode": false,
+  "data": {
+    "object": {
+      "id": "sub_example_123",
+      "customer": "cus_example_123",
+      "status": "active"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+# agentic-billing
+
+Bill subscriptions, invoices, and metered units over Stripe.
+
+Keywords: stripe, subscriptions, invoicing, agentic-suite, claude-code, codex, cli, mcp.
+
+- SDK: import { createBillingAdapter } from "agentic-billing".
+- Sibling usage: reportPackUsage(adapter, ledger, { pack, kind, customerId, units }).
+- CLI: agentic-billing subscribe --email "..." --plan "...".
+- MCP: run agentic-billing mcp, then call billing_subscribe.
+
+## Docs
+
+- README: https://github.com/pooriaarab/agentic-billing
+- Core contract: https://github.com/pooriaarab/agentic-billing/blob/main/docs/agentic-core.md
+- License: MIT

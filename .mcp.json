@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "agentic-billing": {
+      "command": "npx",
+      "args": ["-y", "agentic-billing", "mcp"]
+    }
+  }
+}

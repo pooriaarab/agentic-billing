@@ -1,0 +1,71 @@
+{
+  "name": "agentic-billing",
+  "version": "0.1.0",
+  "description": "Bill subscriptions, invoices, and metered units over Stripe.",
+  "keywords": [
+    "stripe",
+    "subscriptions",
+    "invoicing",
+    "agentic-suite",
+    "claude-code",
+    "codex",
+    "cli",
+    "mcp"
+  ],
+  "license": "MIT",
+  "author": "Pooria Arab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pooriaarab/agentic-billing.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist",
+    "examples",
+    "docs",
+    "server.json",
+    ".mcp.json",
+    "AGENTS.md",
+    "RULES.md",
+    "SKILL.md",
+    "llms.txt",
+    "agentic-core.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "mcpName": "io.github.pooriaarab/agentic-billing",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "agentic-billing": "./dist/cli.js",
+    "agentic-billing-mcp": "./dist/mcp-bin.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "agentic-core": "0.1.0",
+    "stripe": "^23.0.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0"
+  }
+}
