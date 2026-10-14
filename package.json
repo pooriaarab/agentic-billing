@@ -1,6 +1,6 @@
 {
   "name": "agentic-billing",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Stripe billing toolkit for subscriptions, invoices, metered usage, checkout, and webhooks with Node.js, CLI, MCP, and Cloudflare D1 ledgers.",
   "keywords": [
     "stripe",
