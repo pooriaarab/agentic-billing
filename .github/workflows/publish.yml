@@ -26,3 +26,16 @@ jobs:
             || npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish to ants.land
+        run: |
+          echo "//npm.ants.land/:_authToken=$ANTS_TOKEN" >> "$HOME/.npmrc"
+          NAME=$(node -p "require('./package.json').name")
+          VER=$(node -p "require('./package.json').version")
+          if npm view "$NAME@$VER" version --registry https://npm.ants.land >/dev/null 2>&1; then
+            echo "$NAME@$VER on ants.land; skipping."
+          else
+            npm publish --access public --registry https://npm.ants.land
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.ANTS_TOKEN }}
+          ANTS_TOKEN: ${{ secrets.ANTS_TOKEN }}
